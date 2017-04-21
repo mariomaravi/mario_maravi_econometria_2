@@ -1,3 +1,5 @@
+##repaso 1
+
 rm(list= ls())
 x<- 8/5
 print(x)
@@ -99,3 +101,61 @@ print(R)
 mean(1:10)
 mean %>% 1:10
 (1 + 8) %>% sqrt
+
+##repaso 2
+rm(list = ls())
+library(tidyverse)
+tidyverse_packages(TRUE)
+
+library(dplyr)
+x <- c(1:100)
+y <- c(1:100)*5
+z <- seq(0.01,1,0.01)
+p <- c("a")
+q <- c(TRUE)
+dframe <- data.frame(x,y,z,p,q)
+print(dframe)
+dtibble <- tibble(x,y,z,p,q) 
+print(dtibble)
+
+dframe2 <- data.frame( dato = 1:10  , valor = rnorm(10), codigo="q" ,  inicial = sample(letters, 10)  )
+print(dframe2)
+dtibble2<- as_tibble(dframe2)
+print(dtibble2)
+cvalor1 <- dframe2$v
+print(cvalor1)
+cvalor2<- dtibble2$v
+print(cvalor2)
+
+base<- tibble(observacion= (1:50),
+              codigo = c( rep("a",15), rep("b",15), rep("c",20) ),               
+              localidad = sample(c( rep("111",4), rep("222",6), rep("121",5),    
+                                    rep("123",4), rep("112",2), rep("213",4),    
+                                    rep("211",4), rep("113",6), rep("221",5),    
+                                    rep("322",4), rep("122",2), rep("212",4))),  
+              edad = sample( 30:60, 50, replace=TRUE ),                          
+              sexo = sample( c("M","F"), 50, replace=TRUE ),                     
+              ingreso = sample( 850:5000, 50, replace=FALSE ),                   
+              propingreso = (ingreso * 0.75),                                    
+              prosingreso = (ingreso * 0.25),                                    
+              ahorro = (ingreso * 0.1),                                          
+              consumo = (ingreso * 0.9),                                         
+              consumoal = sample( 300:500, 50, replace=FALSE ),                  
+              consumoal1 = (consumoal * 0.4),                                   
+              consumoal2 = (consumoal * 0.5),                                    
+              consumoal3 = (consumoal * 0.1),                                    
+              consumotec = sample( 800:2000, 50, replace=FALSE ))
+print(base)
+base[5, 2] = NA
+base[2, 5] = NA
+base[6, 7] = NA
+base[7, 5] = NA     
+base[3, 3] = NA
+print(base)
+
+A1 <- filter(base, edad<=40)
+print(A1)
+A2 <- filter(base, edad>40 & sexo=="M")
+print(A2)
+A3 <- filter(base, edad>40 , sexo=="M")
+print(A3)
