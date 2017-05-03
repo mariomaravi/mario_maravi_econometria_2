@@ -15,7 +15,7 @@ z
 
 a<- 2
 class(a)
-
+a
 is.numeric(a)
 is.integer(a)
 
@@ -58,7 +58,7 @@ table(mes)
 
 logica<- c(TRUE, FALSE,TRUE,TRUE)
 logica
-
+table(logica)
 
 
 

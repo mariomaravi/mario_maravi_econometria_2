@@ -19,7 +19,7 @@ tidy(reg.lineal)
 
 head(augment(reg.lineal))
 
-glance(reg.lineal)
+  glance(reg.lineal)
 
 reg.quintil <- rq(log(wage) ~ experience + I(experience^2) + education, 
                   data = cps, tau = seq(0.2,0.8, by=0.15))

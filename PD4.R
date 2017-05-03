@@ -108,7 +108,7 @@ D2 = filter(enaho, p207=="1" & region=="08" | region=="03" & ocu500=="1")
 
 # Cuanto es el promedio de ingreso en cada grupo?
 mean(D1$p538a1, na.rm = TRUE)
-mean(D2$p538a1, na.rm=TRUE)
+mean(D2$p538a1, na.rm=true)
 m
 #   comparar salario entre costa y sierra
 # Sierra
@@ -149,8 +149,8 @@ basreg <- transmute(base2,dominio,p538a1,dummy1 )
 
 basreg <- basreg[complete.cases(basreg), ]
 
-dummy2 <- rep(0,nrow(basreg))
-dummy2[  (basreg$dominio==1  | basreg$dominio==2 | basreg$dominio==3 )   ] <- 1
+dummy1 <- rep(0,nrow(basreg))
+dummy1[  (basreg$dominio==1  | basreg$dominio==2 | basreg$dominio==3 )   ] <- 1
 
 reg2 <- lm( basreg$p538a1 ~  dummy1  )
 summary(reg2)
