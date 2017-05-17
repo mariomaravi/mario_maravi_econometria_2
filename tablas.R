@@ -35,7 +35,7 @@ tabla4b
 gather(tabla4b, 
        `1999`, `2000`, 
        key = "año", 
-       value = "población"))
+       value = "población")
 gather(tabla4b, 
        `1999`, `2000`, 
        key = "año", 

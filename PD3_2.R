@@ -36,9 +36,11 @@ rm(list = ls())
      q <- c(TRUE)   
 #    Este es un data.frame: muetra todo y no ofrece detalles
      dframe <- data.frame(x,y,z,p,q)
-#    Este es un tibble: m?s detallado y no muestra todo    
+dframe
+     #    Este es un tibble: m?s detallado y no muestra todo    
      dtibble <- tibble(x,y,z,p,q) 
-#    esto lo vemos ordenando que se muestre las variables     
+dtibble
+     #    esto lo vemos ordenando que se muestre las variables     
      print(dframe)     
      print(dtibble)
      
@@ -165,6 +167,7 @@ rm(list = ls())
         d1 <- rep(0,50)
         d1[base$sexo=="M"] <- 1
         D4 <- mutate(base,  d1  )
+D4
 #       e) Crear una variable dummy de intervalo de ingreso y pegarla en la anterior base: 
 #          El intervalo sera: 1 para ingreso < 3000 y 0 para ingreso >=3000
         d2 <- rep(0,50)
@@ -181,3 +184,4 @@ rm(list = ls())
            D6b <- mutate(base, dummyI = d3)
           
 print(D6b)
+

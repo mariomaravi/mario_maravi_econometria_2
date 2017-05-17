@@ -113,7 +113,7 @@ x[c(1,3)]
 x[x<5]
 
 mylist<- list(sample= rnorm(5), family="distribucion normal", parameters= list(mean=0, sd=1))
-mylist[[2]]
+mylist[[3]]
 mylist$sample
 x>2 & x<=5
 x
@@ -136,6 +136,8 @@ rnorm(5)
 sample(1:9)
 sample(c(1:2), size=5, replace = TRUE, prob = c(0.2,0.8))
 if(rnorm(1)>0) sum(x) else mean(x)
+x <- c(1.8, 3.14, 4, 88.169, 13)
+ifelse(x > 4, sqrt(x), x^2)
 X <- matrix(1:20, ncol = 2)
 cmeans(X)
 cmeans <- function(X) {
@@ -159,7 +161,7 @@ f
 y
 plot(y~x)
 lm(y~x)
-
+plot(lm(y~x))
 ###manejo data
 mydata<- data.frame(one= 1:10, two= 11:20, three= 21:30)
 mydata 
@@ -176,7 +178,7 @@ detach(mydata)
 with(mydata, mean(three))            ###variables=columnas  observaciones=filas
 mydata.sub <- subset(mydata, two <= 16, select = -two)
 mydata.sub
-
+mean(mydata$two)
 
 
 ###import export

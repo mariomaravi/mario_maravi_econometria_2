@@ -71,7 +71,7 @@ rm(list = ls())
      hh <- factor(h)
      class(hh)
 
-     
+hh     
 # 5) Elementos especiales en R 
      
 #    i)  NA (not available - no disponible): es el nombre de un missing value o elemento perdido
@@ -120,9 +120,9 @@ rm(list = ls())
 #    i) extraer el promedio del ingreso
      prome1 <- mean(ingreso, data=A)
      prome2 <- mean(ingreso, na.rm=TRUE, data=A)
-     
+prome2     
      sum <- summary(A)
-     
+     sum
 #    ii) Cuantos missing values tenemos?
      l <- A[!complete.cases(A),]
      length(l)
@@ -152,10 +152,10 @@ rm(list = ls())
      d$sexo
 #    iii) crear una variable que seala raiz cuadrada del ingreso y otra que sea consumo sobre ingreso
      R <- data.frame( qinc = (d$ingreso)^(1/2)  , prop = d$ingreso / d$consumo  )
-     
+R     
 #    Imputador de funciones: operador "pipe" %>%
 #    Obtener el promedio de los 10 primeros numeros
-     meand(1:10)
+     mean(1:10)
      1:10 %>% mean
 #    sacar raiz cuadrada de 9
      (1 + 8) %>% sqrt
